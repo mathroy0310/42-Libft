@@ -1,22 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 12:39:55 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 13:43:43 by maroy            ###   ########.fr       */
+/*   Created: 2022/10/24 14:06:08 by maroy             #+#    #+#             */
+/*   Updated: 2022/10/24 14:06:17 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-
-int	ft_isalnum(int c)
-{
-	if (ft_isalpha(c) || ft_isdigit(c))
-	{
-		return (1);
-	}
-	return (0);
-}
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

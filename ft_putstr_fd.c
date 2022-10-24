@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 12:39:55 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 13:43:43 by maroy            ###   ########.fr       */
+/*   Created: 2022/10/24 13:52:23 by maroy             #+#    #+#             */
+/*   Updated: 2022/10/24 13:55:05 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	int	i;
+
+	i = -1;
+	while (s[++i])
 	{
-		return (1);
+		ft_putchar_fd(s[i], fd)
 	}
-	return (0);
 }
