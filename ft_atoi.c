@@ -6,34 +6,35 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:10:02 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/20 14:04:34 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/02 12:20:42 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	s;
-	int	res;
+	int		i;
+	int		s;
+	int		res;
+	char	*cstr;
 
+	cstr = (char *)str;
 	i = 0;
 	s = 1;
 	res = 0;
-	while ((str[i] == ' ') || (str[i] == '\n') || (str[i] == '\t'))
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	if (cstr[i] == '-' || cstr[i] == '+')
 	{
-		if ((str[i + 1] == '-') || (str[i + 1] == '+'))
-			return (NULL);
-		s *= -1;
-	}
-	i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - '0';
+		if (cstr[i] == '-')
+			s = -s;
 		i++;
 	}
-	return (res);
+	while (ft_isdigit(cstr[i]))
+	{
+		res = res * 10 + cstr[i] - '0';
+		i++;
+	}
+	return (s * res);
 }

@@ -6,24 +6,23 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:36:20 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/20 14:16:12 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/02 12:07:06 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"q
+#include"libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t			i;
-	unsigned char	*cb;
-	unsigned char	*cc;
+	size_t	i;
+	char	*str;
 
-	i = -1;
-	cb = (unsigned char *)b;
-	cc = (unsigned char *)c;
-	while (++i < len)
+	str = (char *)b;
+	i = 0;
+	while (i < len)
 	{
-		cb[i] = cc;
+		str[i] = c;
+		i++;
 	}
-	return (b;
+	return (str);
 }

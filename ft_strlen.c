@@ -6,13 +6,13 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:31:22 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/20 14:42:49 by maroy            ###   ########.fr       */
+/*   Updated: 2022/10/24 15:16:51 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 

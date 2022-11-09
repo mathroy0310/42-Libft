@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:06:48 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/20 14:16:40 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/02 12:03:59 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	size_t			i;
-	unsigned char	*csrc;
-	unsigned char	*cdst;
+	size_t	i;
+	char	*dst1;
+	char	*src1;
 
 	i = 0;
-	cdst = (unsigned char *)dst;
-	csrc = (unsigned char *)src;
-	if (!cdst || !csrc)
-		return (NULL);
+	dst1 = (char *)dst;
+	src1 = (char *)src;
+	if (dst1 == src1)
+		return (dst1);
 	while (i < len)
 	{
-		cdst[i] = csrc[i];
+		dst1[i] = src1[i];
 		i++;
 	}
 	return (dst);

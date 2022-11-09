@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:50:26 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/20 16:00:44 by maroy            ###   ########.fr       */
+/*   Updated: 2022/10/24 14:56:50 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*b;
 
-	if (SIZE_MAX / cout < size)
+	if (SIZE_MAX / count < size)
 		return (NULL);
-	b = malloc(cout * size);
+	b = malloc(count * size);
 	if (!b)
-		return (NULL);
+		return (b);
 	ft_bzero(b, count * size);
 	return (b);
 }

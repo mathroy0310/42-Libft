@@ -6,32 +6,36 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:12:06 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/20 16:43:20 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/07 14:28:34 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t				i;
-	unsigned char		*csrc;
-	unsigned char		*cdst;
+	size_t	i;
+	char	*csrc;
+	char	*cdst;
 
-	csrc = (unsigned char *)src;
-	cdst = (unsigned char *)dst;
+	csrc = (char *)src;
+	cdst = (char *)dst;
 	i = -1;
-	if (!src || !dst)
+	if (!csrc && !cdst)
 		return (NULL);
 	if (csrc > cdst)
 	{
-		while (len > ++i)
-			cdst[len - i - 1] = csrc[len - i - 1];
+		while (++i < len)
+		{
+			cdst[i] = csrc[i];
+		}
 	}
 	else
 	{
-		while (len > ++i)
-			cdst[i] = csrc[i];
+		while (++i != len)
+		{
+			cdst[len - i - 1] = csrc[len - i - 1];
+		}
 	}
 	return (dst);
 }

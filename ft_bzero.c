@@ -6,22 +6,21 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:32:38 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/20 15:53:22 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/02 13:03:03 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*s;
+	size_t	i;
+	char	*ss;
 
 	i = -1;
-	ss = (unsigned char *)s;
+	ss = (char *)s;
 	while (++i < n)
 	{
 		ss[i] = 0;
 	}
-	return (s);
 }

@@ -6,46 +6,69 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:26:09 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 12:32:51 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/09 11:45:01 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(char *ptr, int size)
+static char	*ft_add_strs(const char *s, char c, int *start)
 {
-	void	*newptr;
-	int		msize;
+	int		i;
+	char	*str;
+	int		ii;
 
-	msize = ft_strlen(ptr);
-	if (size <= msize)
-		return (ptr);
-	newptr = malloc(size);
-	ft_memcpy(newptr, ptr, msize);
-	free(ptr);
-	return (newptr);
+	i = 0;
+	ii = *start;
+	while (s[ii] == c)
+	{
+		ii++;
+	}
+	while (s[ii] && s[ii] != c)
+	{
+		ii++;
+		i++;
+	}
+	str = ft_substr(s, ii - i, i);
+	*start = ii;
+	return (str);
+}
+
+static int	ft_number_words(const char *s, char c)
+{
+	int	i;
+	int	words;
+
+	i = 0;
+	words = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (s[i + 1] == '\0' || s[i + 1] == c))
+			words++;
+		i++;
+	}
+	return (words);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**dst;
-	char	*ptr;
-	char	*str;
-	int		len;
-	int		dstlen;
+	int		i;
+	int		ii;
+	int		words;
+	char	**strs;
 
-	dstlen = 0;
-	str = s1;
-	ptr = ft_strstr(s1, c);
-	len = ptr - str;
-	if (ft_strlen(str) != 0)
+	if (!s)
+		return (NULL);
+	i = 0;
+	words = ft_number_words(s, c);
+	strs = ft_calloc(sizeof(char *), words + 1);
+	if (!strs)
+		return (NULL);
+	ii = 0;
+	while (i < words)
 	{
-		len = ft_strlen(str);
-		dstlen++;
-		dst = (char **)ft_realloc(dst, sizeof(char *) * dstlen);
+		strs[i] = ft_add_strs(s, c, &ii);
+		i++;
 	}
-	dstlen++;
-	dst = (char **)ft_realloc(dst, sizeof(char *) * dstlen);
-	tab[dstlen - 1] = NULL;
-	return (dst);
+	return (strs);
 }

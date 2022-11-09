@@ -6,47 +6,45 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:56:07 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 11:25:07 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/02 12:06:10 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_isset(char c, char const *set)
+static int	ft_isset(char c, char const *set)
 {
-	while (*set)
+	size_t	i;
+
+	i = 0;
+	while (set[i])
 	{
-		if (c == *set++)
-		{
+		if (set[i] == c)
 			return (1);
-		}
-		return (0);
+		i++;
 	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	char	*dst;
+	char	*trmd;
+	size_t	i;
+	size_t	f;
+	size_t	l;
 
-	if (!s1)
+	f = 0;
+	l = ft_strlen(s1);
+	while (s1[f] && ft_isset(s1[f], set))
+		f++;
+	while (l > f && ft_isset(s1[l - 1], set))
+		l--;
+	trmd = malloc(sizeof(char) * (l - f + 1));
+	if (trmd == NULL)
 		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
 	i = 0;
-	j = ft_strlen(s1);
-	while (ft_isset(s1[i], set) == 1)
-		i++;
-	if (i == j)
-	{
-		if (!(dst == ft_strdup("")))
-			return (NULL);
-		else
-			return (dest);
-	}
-	while (ft_isset(s1[j - 1], set) == 1)
-		j--;
-	dst = ft_substr(s1, i, j - i);
-	return (dst);
+	while (f < l)
+		trmd[i++] = s1[f++];
+	trmd[i] = 0;
+	return (trmd);
 }

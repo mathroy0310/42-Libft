@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:58:39 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 14:01:06 by maroy            ###   ########.fr       */
+/*   Updated: 2022/10/24 15:24:57 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nbr;
 
-	if (nb < 0)
+	if (n < 0)
 	{
-		nbr = -nb;
+		nbr = -n;
 		ft_putchar_fd('-', fd);
 	}
 	else
 	{
-		nbr = nb;
+		nbr = n;
 	}
-	if (nb / 10 != 0)
+	if (n / 10 != 0)
 		ft_putnbr_fd(nbr / 10, fd);
 	ft_putchar_fd(nbr % 10 + '0', fd);
 }

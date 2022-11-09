@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:52:23 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 13:55:05 by maroy            ###   ########.fr       */
+/*   Updated: 2022/10/24 14:57:54 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_putstr_fd(char *s, int fd)
 	i = -1;
 	while (s[++i])
 	{
-		ft_putchar_fd(s[i], fd)
+		ft_putchar_fd(s[i], fd);
 	}
 }

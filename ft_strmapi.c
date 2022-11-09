@@ -10,4 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*str;
+	size_t	i;
+
+	if (s)
+	{
+		i = 0;
+		str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+		if (!str)
+			return (NULL);
+		while (i < ft_strlen(s))
+		{
+			str[i] = f((unsigned int)i, s[i]);
+			i++;
+		}
+		str[i] = 0;
+		return (str);
+	}
+	return (NULL);
+}

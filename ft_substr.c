@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:36:03 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 11:46:38 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/02 13:51:24 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char const	*dst;
-	int			i;
+	char	*dst;
+	size_t	i;
 
-	i = -1;
+	i = 0;
 	if (!s)
 		return (NULL);
-	dst = malloc(len);
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	dst = malloc(sizeof(char) * len + 1);
 	if (!dst)
 		return (NULL);
-	while (++i < len)
-	{
-		dst[i] = s[i + start];
-	}
+	if (start > ft_strlen(s))
+		start = ft_strlen(s);
+	ft_strlcpy(dst, s + start, len + 1);
 	return (dst);
 }
