@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:56:07 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/02 12:06:10 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:18:02 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	f;
 	size_t	l;
 
+	if (!s1 || !set)
+		return (NULL);
 	f = 0;
 	l = ft_strlen(s1);
 	while (s1[f] && ft_isset(s1[f], set))

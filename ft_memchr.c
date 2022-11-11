@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:50:26 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/02 13:03:47 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:04:59 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*str;
 	void			*b;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	str = (unsigned char *)s;
 	b = NULL;

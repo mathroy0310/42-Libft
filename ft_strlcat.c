@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:37:09 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/02 13:04:32 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:02:12 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_len;
 	size_t	i;
 
+	if (!src || !dst)
+		return (0);
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	i = 0;

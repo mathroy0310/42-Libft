@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:11:37 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/02 12:04:42 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:25:43 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s1)
 	int		len;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	len = (int) ft_strlen(s1) + 1;
 	s2 = malloc(sizeof (char) * len);
 	if (s2 == NULL)

@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:16:53 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/09 13:59:44 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 14:54:09 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	if (!lst)
+		return ;
 	del(lst->content);
 	free(lst);
 }

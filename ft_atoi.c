@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:10:02 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/11 12:55:53 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:06:10 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_atoi(const char *str)
 	int		res;
 	char	*cstr;
 
+	if (!str)
+		return (0);
 	cstr = (char *)str;
 	i = 0;
 	s = 1;

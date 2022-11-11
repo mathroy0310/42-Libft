@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:26:09 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/11 12:59:00 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:17:10 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static char	*ft_add_strs(const char *s, char c, int *start)
 	char	*str;
 	int		j;
 
+	if (!s || !start)
+		return (NULL);
 	i = 0;
 	j = *start;
 	while (s[j] == c)
@@ -37,6 +39,8 @@ static int	ft_wcount(const char *s, char c)
 	int	i;
 	int	words;
 
+	if (!s)
+		return (0);
 	i = 0;
 	words = 0;
 	while (s[i])

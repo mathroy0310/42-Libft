@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:06:08 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/09 16:49:40 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:22:45 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	size_t	i;
 
+	if (!s || !f)
+		return (NULL);
 	if (s)
 	{
 		i = 0;

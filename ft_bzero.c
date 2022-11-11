@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:32:38 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/11 12:37:15 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 14:33:24 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*cs;
-
-	i = -1;
-	cs = (char *)s;
-	while (++i < n)
-	{
-		cs[i] = 0;
-	}
+	ft_memset(s, 0, n);
 }
