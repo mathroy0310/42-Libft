@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:26:09 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/09 11:45:01 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 09:52:39 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*ft_add_strs(const char *s, char c, int *start)
 	return (str);
 }
 
-static int	ft_number_words(const char *s, char c)
+static int	ft_wcount(const char *s, char c)
 {
 	int	i;
 	int	words;
@@ -60,7 +60,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i = 0;
-	words = ft_number_words(s, c);
+	words = ft_wcount(s, c);
 	strs = ft_calloc(sizeof(char *), words + 1);
 	if (!strs)
 		return (NULL);

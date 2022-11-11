@@ -2,14 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2022/10/25 13:57:24 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/25 13:57:24 by marvin           ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 14:26:07 by maroy             #+#    #+#             */
+/*   Updated: 2022/11/09 14:33:53 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*res;
+	t_list	*dst;
 
-	res = malloc(sizeof(t_list));
-	if (!res)
+	dst = malloc(sizeof(t_list));
+	if (!dst)
 		return (NULL);
-	res->content = content;
-	res->next = NULL;
-	return (res);
+	dst->content = content;
+	dst->next = NULL;
+	return (dst);
 }
