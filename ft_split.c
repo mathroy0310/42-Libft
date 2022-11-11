@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:26:09 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/11 09:52:39 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 12:59:00 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@ static char	*ft_add_strs(const char *s, char c, int *start)
 {
 	int		i;
 	char	*str;
-	int		ii;
+	int		j;
 
 	i = 0;
-	ii = *start;
-	while (s[ii] == c)
+	j = *start;
+	while (s[j] == c)
+		j++;
+	while (s[j] && s[j] != c)
 	{
-		ii++;
-	}
-	while (s[ii] && s[ii] != c)
-	{
-		ii++;
+		j++;
 		i++;
 	}
-	str = ft_substr(s, ii - i, i);
-	*start = ii;
+	str = ft_substr(s, j - i, i);
+	*start = j;
 	return (str);
 }
 
@@ -53,7 +51,7 @@ static int	ft_wcount(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		ii;
+	int		j;
 	int		words;
 	char	**strs;
 
@@ -64,10 +62,10 @@ char	**ft_split(char const *s, char c)
 	strs = ft_calloc(sizeof(char *), words + 1);
 	if (!strs)
 		return (NULL);
-	ii = 0;
+	j = 0;
 	while (i < words)
 	{
-		strs[i] = ft_add_strs(s, c, &ii);
+		strs[i] = ft_add_strs(s, c, &j);
 		i++;
 	}
 	return (strs);

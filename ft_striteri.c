@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:43:57 by maroy             #+#    #+#             */
-/*   Updated: 2022/10/24 15:20:00 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 12:47:10 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	i;
 
 	i = 0;
-	if (s != NULL)
+	if (s)
 	{
 		while (s[i])
 		{

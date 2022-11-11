@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:27:53 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/10 12:05:30 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 12:46:24 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (cur)
 	{
 		next = cur->next;
-		del(cur->content);
-		free(cur);
+		ft_lstdelone(cur, del);
 		cur = next;
 	}
 	*lst = NULL;

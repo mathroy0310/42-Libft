@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:12:06 by maroy             #+#    #+#             */
-/*   Updated: 2022/11/07 14:28:34 by maroy            ###   ########.fr       */
+/*   Updated: 2022/11/11 12:55:50 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (csrc > cdst)
 	{
 		while (++i < len)
-		{
 			cdst[i] = csrc[i];
-		}
 	}
 	else
 	{
 		while (++i != len)
-		{
 			cdst[len - i - 1] = csrc[len - i - 1];
-		}
 	}
 	return (dst);
 }
